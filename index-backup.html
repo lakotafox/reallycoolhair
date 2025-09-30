@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☆*:.｡. LUCKY YOU .｡.:*☆ ~Hair Paradise~ ★彡</title>
+    <link rel="stylesheet" href="y2k-styles.css">
+    <script src="gallery.js" defer></script>
+    <script src="y2k-effects.js" defer></script>
+</head>
+<body>
+    <!-- Butterfly GIF -->
+    <img src="butterfly.gif" class="butterfly-gif" id="butterfly" alt="Flying butterfly">
+
+    <!-- Sparkle Stars Background -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Welcome Marquee -->
+    <marquee behavior="scroll" direction="left" scrollamount="10">
+        ☆ﾟ.*･｡ﾟ WELCOME TO LUCKY YOU HAIR SALON!!! ☆ﾟ.*･｡ﾟ GET YOUR HAIR DID!!! ☆ﾟ.*･｡ﾟ CLOVER IS THE BEST!!! ☆ﾟ.*･｡ﾟ
+    </marquee>
+    <header>
+        <img src="Welcome.gif" class="welcome-gif" alt="Welcome">
+        <nav>
+            <div class="logo">
+            </div>
+            <!-- Retro Hamburger Menu Button -->
+            <button class="hamburger-menu" id="hamburger-menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-text">MENU</span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <img src="star.gif" style="position: absolute; top: 20px; left: 20px; animation: float 3s infinite;" alt="Sparkle star" width="60">
+        <img src="star.gif" style="position: absolute; top: 20px; right: 20px; animation: float 3s infinite; animation-delay: 1s;" alt="Sparkle star" width="60">
+        <img src="star.gif" style="position: absolute; bottom: 20px; left: 50px; animation: float 3s infinite; animation-delay: 2s;" alt="Sparkle star" width="60">
+        <img src="flowerreflection.gif" style="position: absolute; bottom: 10px; right: 50px; width: 150px; opacity: 0.8;" alt="Flower">
+        <img src="shark.gif" style="position: absolute; bottom: 20px; right: 200px; animation: float 5s infinite ease-in-out;" alt="Cool shark" width="100">
+        <div class="hero-content">
+            <h2>LUCKY YOU</h2>
+            <p class="hero-subtitle">☆･ﾟ:*:ﾟYou're in the PERFECT place for PERFECT hair:*:ﾟ☆</p>
+            <p class="hero-text">Transform your look with Clover's expert styling and vibrant creativity</p>
+            <a href="#contact" class="cta-button">Book Your Appointment</a>
+            <div style="margin-top: 30px;">
+                <span class="blink-text" style="font-size: 2rem;">~*HAIR PARADISE*~</span>
+            </div>
+        </div>
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </section>
+
+
+    <section id="about" class="about">
+        <div class="about-content">
+            <div class="about-text">
+                <p>Welcome to Lucky You, where creativity meets expertise! Meet Clover, your passionate stylist who brings years of experience and a fresh perspective to every cut, color, and style.</p>
+                <p>Clover believes that great hair isn't just about looking good, it's about feeling confident and expressing your unique personality. They've created a vibrant, welcoming salon designed to make you feel special from the moment you walk in.</p>
+                <div class="features">
+                    <div class="feature">
+                        <span class="feature-icon"></span>
+                        <span>Expert Styling</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon"></span>
+                        <span>Personalized Service</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon"></span>
+                        <span>Creative Color</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon"></span>
+                        <span>Friendly Atmosphere</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <div class="image-placeholder">
+                    <span>Clover's Photo Here</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heart Garland Divider -->
+    <div style="text-align: center; margin: 20px 0; overflow: hidden;">
+        <marquee behavior="scroll" direction="right" scrollamount="5">
+            <img src="heartgarland.gif" alt="Heart garland">
+            <img src="star.gif" alt="Star" width="40">
+            <img src="heartgarland.gif" alt="Heart garland">
+            <img src="star.gif" alt="Star" width="40">
+            <img src="heartgarland.gif" alt="Heart garland">
+        </marquee>
+    </div>
+
+    <section id="gallery" class="gallery">
+        <h2>★ Lucky People ★</h2>
+        <div style="text-align: center; margin: 20px 0;">
+            <img src="butterfly.gif" alt="Butterfly" style="display: inline-block; margin: 0 10px;" width="60">
+            <img src="butterfly.gif" alt="Butterfly" style="display: inline-block; margin: 0 10px; transform: scaleX(-1);" width="60">
+        </div>
+        <div class="gallery-grid" id="gallery-grid">
+            <!-- Gallery items will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- Rainbow Divider with Heart Garland and Fire Skulls -->
+    <div style="text-align: center; margin: 20px 0;">
+        <img src="fireskull.gif" alt="Fire skull" style="display: inline-block; width: 80px;">
+        <img src="heartgarland.gif" alt="Heart garland" style="display: inline-block;">
+        <img src="heartgarland.gif" alt="Heart garland" style="display: inline-block;">
+        <img src="heartgarland.gif" alt="Heart garland" style="display: inline-block;">
+        <img src="fireskull.gif" alt="Fire skull" style="display: inline-block; width: 80px; transform: scaleX(-1);">
+    </div>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Haircuts & Styling</h3>
+                <p>Precision cuts and trendy styles tailored to your personality</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Hair Coloring</h3>
+                <p>Vibrant colors, highlights, balayage, and ombre techniques</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Hair Treatments</h3>
+                <p>Deep conditioning, keratin treatments, and hair repair</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Special Events</h3>
+                <p>Wedding, prom, and special occasion styling</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Hair Extensions</h3>
+                <p>Add length and volume with premium extensions</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Fun Dyes & Creative Colors</h3>
+                <p>Wild colors, rainbow hair, split dyes, and experimental styles</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for displaying all photos from a folder -->
+    <div id="gallery-modal" class="gallery-modal">
+        <button class="modal-close">[X] CLOSE</button>
+        <div class="modal-content">
+            <h3 id="modal-title">Client Gallery</h3>
+            <div class="modal-gallery" id="modal-gallery">
+                <!-- Photos will be loaded here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox for expanded single image -->
+    <div id="image-lightbox" class="image-lightbox">
+        <button class="lightbox-close">[X] CLOSE</button>
+        <img id="lightbox-image" src="" alt="">
+    </div>
+
+    <!-- Rainbow Divider -->
+    <img src="data:image/gif;base64,R0lGODlhAQAKAKIAAP8AAP//AP///wD/AAAAAAAAAAAAAAAAACwAAAAAAQAKAAADBhyGTBUAOw==" style="width: 100%; height: 10px;">
+
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Visit Us</h3>
+                <div class="info-item">
+                    <span class="info-icon"></span>
+                    <div>
+                        <p>123 Style Street</p>
+                        <p>Fashion District, City 12345</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon"></span>
+                    <p>(555) 123-4567</p>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon"></span>
+                    <p>hello@luckyyouhair.com</p>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon"></span>
+                    <div>
+                        <p>Mon-Fri: 9:00 AM - 8:00 PM</p>
+                        <p>Sat: 9:00 AM - 6:00 PM</p>
+                        <p>Sun: 11:00 AM - 5:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Book Your Appointment</h3>
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                    <select required>
+                        <option value="">Select Service</option>
+                        <option>Haircut & Styling</option>
+                        <option>Hair Coloring</option>
+                        <option>Hair Treatment</option>
+                        <option>Special Event Styling</option>
+                        <option>Hair Extensions</option>
+                        <option>Perms & Texture</option>
+                    </select>
+                    <input type="date" required>
+                    <textarea placeholder="Additional Notes (optional)" rows="3"></textarea>
+                    <button type="submit" class="submit-btn">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating decorations -->
+    <img src="shark.gif" style="position: fixed; bottom: 100px; left: -100px; animation: swim 20s infinite linear; z-index: 9995; pointer-events: none;" alt="Swimming shark" width="100" id="swimming-shark">
+    <style>
+        @keyframes swim {
+            0% { left: -100px; }
+            100% { left: calc(100% + 100px); }
+        }
+    </style>
+
+    <footer>
+        <div class="web-ring">
+            <h4>☆ WEB RING ☆</h4>
+            <div class="button-collection">
+                <img src="data:image/gif;base64,R0lGODlhWAAfAPcAAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAP8ALAAAAABYAB8AAAj/AP8JHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDNq3Mixo8ePIEOKHEmypMmTKFOqXMmypcuXMGPKnEmzps2bOHPq3Mmzp8+fQIMKHUq0qNGjSJMqXaq0qdOnUKNKnUq1qtWrWLNq3cq1q9evYMOKHUu2rNmzaNOqXcu2rdu3cOPKnUu3rt27ePPq3cu3r9+/gAMLHky4sOHDiBMrXsy4sePHkCNLnky5suXLmDNr3sy5s+fPoEOLHk26tOnTqFOrXs26tevXsGPLnk27tu3buHPr3s27t+/fwIMLH068uPHjyJMrX868ufPn0KNLn069uvXr2LNr3869u/fv4MOL/x9Pvrz58+jTq1/Pvr379/Djy59Pv779+/jz69/Pv7///wAGKOCABBZo4IEIJqjgggw26OCDEEYo4YQUVmjhhRhmqOGGHHbo4YcghijiiCSWaOKJKKao4oostujiizDGKOOMNNZo44045qjjjjz26OOPQAYp5JBEFmnkkUgmqeSSTDbp5JNQRinllFRWaeWVWGap5ZZcdunll2CGKeaYZJZp5plopqnmmmy26eabcMYp55x01mnnnXjmqeeefPbp55+ABirooIQWauihiCaq6KKMNuroo5BGKumklFZq6aWYZqrpppx26umnoIYq6qiklmrqqaimquqqrLbq6quwxv8q66y01mrrrbjmquuuvPbq66/ABivssMQWa+yxyCar7LLMNuvss9BGK+201FZr7bXYZqvtttx26+234IYr7rjklmvuueimq+667Lbr7rvwxivvvPTWa++9+Oar77789uvvvwAHLPDABBds8MEIJ6zwwgw37PDDEEcs8cQUV2zxxRhnrPHGHHfs8ccghyzyyCSXbPLJKKes8sost+zyyzDHLPPMNNds880456zzzjz37PPPQAct9NBEF2300UgnrfTSTDft9NNQRy311FRXbfXVWGet9dZcd+3112CHLfbYZJdt9tlop6322my37fbbcMct99x012333XjnrffefPft9+B67y344IQXbvjhiCeu+OKMN+7445BHLvnklFdu+eWYZ6755px37vnnoIcu+uikl2766ainrvrqrLfu+uuwxy777LTXbvvtuOeu++689+7778AHL/zwxBdv/PHIJ6/88sw37/zz0Ecv/fTUV2/99dhnr/323Hfv/ffghy/++OPLHhAAOw==" alt="Best viewed in Netscape" width="88" height="31">
+                <img src="data:image/gif;base64,R0lGODlhWAAfAPcAAAAAAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAP8ALAAAAABYAAfAAgj/AP8JHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDNq3Mixo8ePIEOKHEmypMmTKFOqXMmypcuXMGPKnEmzps2bOHPq3Mmzp8+fQIMKHUq0qNGjSJMqXaq0qdOnUKNKnUq1qtWrWLNq3cq1q9evYMOKHUu2rNmzaNOqXcu2rdu3cOPKnUu3rt27ePPq3cu3r9+/gAMLHky4sOHDiBMrXsy4sePHkCNLnky5suXLmDNr3sy5s+fPoEOLHk26tOnTqFOrXs26tevXsGPLnk27tu3buHPr3s27t+/fwIMLH068uPHjyJMrX868ufPn0KNLn069uvXr2LNr3869u/fv4MOL/x9Pvrz58+jTq1/Pvr379/Djy59Pv779+/jz69/Pv7///wAGKOCABBZo4IEIJqjgggw26OCDEEYo4YQUVmjhhRhmqOGGHHbo4YcghijiiCSWaOKJKKao4oostujiizDGKOOMNNZo44045qjjjjz26OOPQAYp5JBEFmnkkUgmqeSSTDbp5JNQRinllFRWaeWVWGap5ZZcdunll2CGKeaYZJZp5plopqnmmmy26eabcMYp55x01mnnnXjmqeeefPbp55+ABirooIQWauihiCaq6KKMNuroo5BGKumklFZq6aWYZqrpppx26umnoIYq6qiklmrqqaimquqqrLbq6quwxv8q66y01mrrrbjmquuuvPbq66/ABivssMQWa+yxyCar7LLMNuvss9BGK+201FZr7bXYZqvtttx26+234IYr7rjklmvuueimq+667Lbr7rvwxivvvPTWa++9+Oar77789uvvvwAHLPDABBds8MEIJ6zwwgw37PDDEEcs8cQUV2zxxRhnrPHGHHfs8ccghyzyyCSXbPLJKKes8sost+zyyzDHLPPMNNds880456zzzjz37PPPQAct9NBEF2300UgnrfTSTDft9NNQRy311FRXbfXVWGet9dZcd+3112CHLfbYZJdt9tlop6322my37fbbcMct99x012333XjnrffefPft9+B67y344IQXbvjhiCeu+OKMN+7445BHLvnklFdu+eWYZ6755px37vnnoIcu+uikl2766ainrvrqrLfu+uuwxy777LTXbvvtuOeu++689+7778AHL/zwxBdv/PHIJ6/88sw37/zz0Ecv/fTUV2/99dhnr/323Hfv/ffghy/++OSXb/756Kev/vrst+/++/DHL//89Ndv//3456///vz3bwAAAAow==" alt="Under Construction" width="88" height="31">
+                <img src="data:image/gif;base64,R0lGODlhWAAfAPcAAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAP8ALAAAAABYAAfAAgj/AP8JHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDNq3Mixo8ePIEOKHEmypMmTKFOqXMmypcuXMGPKnEmzps2bOHPq3Mmzp8+fQIMKHUq0qNGjSJMqXaq0qdOnUKNKnUq1qtWrWLNq3cq1q9evYMOKHUu2rNmzaNOqXcu2rdu3cOPKnUu3rt27ePPq3cu3r9+/gAMLHky4sOHDiBMrXsy4sePHkCNLnky5suXLmDNr3sy5s+fPoEOLHk26tOnTqFOrXs26tevXsGPLnk27tu3buHPr3s27t+/fwIMLH068uPHjyJMrX868ufPn0KNLn069uvXr2LNr3869u/fv4MOL/x9Pvrz58+jTq1/Pvr379/Djy59Pv779+/jz69/Pv7///wAGKOCABBZo4IEIJqjgggw26OCDEEYo4YQUVmjhhRhmqOGGHHbo4YcghijiiCSWaOKJKKao4oostujiizDGKOOMNNZo44045qjjjjz26OOPQAYp5JBEFmnkkUgmqeSSTDbp5JNQRinllFRWaeWVWGap5ZZcdunll2CGKeaYZJZp5plopqnmmmy26eabcMYp55x01mnnnXjmqeeefPbp55+ABirooIQWauihiCaq6KKMNuroo5BGKumklFZq6aWYZqrpppx26umnoIYq6qiklmrqqaimquqqrLbq6quwxv8q66y01mrrrbjmquuuvPbq66/ABivssMQWa+yxyCar7LLMNuvss9BGK+201FZr7bXYZqvtttx26+234IYr7rjklmvuueimq+667Lbr7rvwxivvvPTWa++9+Oar77789uvvvwAHLPDABBds8MEIJ6zwwgw37PDDEEcs8cQUV2zxxRhnrPHGHHfs8ccghyzyyCSXbPLJKKes8sost+zyyzDHLPPMNNds880456zzzjz37PPPQAct9NBEF2300UgnrfTSTDft9NNQRy311FRXbfXVWGet9dZcd+3112CHLfbYZJdt9tlop6322my37fbbcMct99x012333XjnrffefPft9+B67y744IQXbvjhiCeu+OKMN+7445BHLvnklFdu+eWYZ6755px37vnnoIcu+uikl2766ainrvrqrLfu+uuwxy777LTXbvvtuOeu++689+7778AHL/zwxBdv/PHIJ6/88sw37/zz0Ecv/fTUV2/99dhnr/323Hfv/ffghy/++OSXb/756Kev/vrst+/++/DHL//89Ndv//3456///vz3bwAAAAow==" alt="GeoCities Forever" width="88" height="31">
+            </div>
+        </div>
+
+        <div class="counter">
+            <p style="color: #00ff00; margin-bottom: 10px;">You are visitor number:</p>
+            <div class="counter-display" id="visitor-counter">000420</div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 1999-2024 Lucky You Hair Styling Studio</p>
+            <p class="blink-text">BEST VIEWED IN 800x600 RESOLUTION</p>
+            <p>Made with ♥ in HTML</p>
+        </div>
+    </footer>
+</body>
+</html>
