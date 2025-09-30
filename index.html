@@ -21,8 +21,8 @@
     </marquee>
     <header>
         <img src="Welcome.gif" class="welcome-gif" alt="Welcome">
-        <img src="hot.gif" style="display: inline-block; vertical-align: middle; margin-left: 20px;" alt="Hot" width="80">
-        <img src="lavalamp.gif" style="display: inline-block; vertical-align: middle; margin-left: 20px;" alt="Lava lamp" width="60">
+        <img src="hot.gif" class="header-gif-hot" style="display: inline-block; vertical-align: middle; margin-left: 20px;" alt="Hot" width="80">
+        <img src="lavalamp.gif" class="header-gif-lava" style="display: inline-block; vertical-align: middle; margin-left: 20px;" alt="Lava lamp" width="60">
         <nav>
             <div class="logo">
             </div>
@@ -58,7 +58,7 @@
                 <div style="margin-top: 15px;">
                     <img src="scissors.gif" alt="Scissors" style="width: 80px; animation: float 3s infinite ease-in-out;">
                 </div>
-                <span class="blink-text" style="display: block; margin-top: 15px; font-size: 1.5rem;">☆･ﾟ:*:ﾟYou're in the PERFECT place for PERFECT hair:*:ﾟ☆</span>
+                <p class="hero-subtitle" style="margin-top: 15px;">☆･ﾟ:*:ﾟYou're in the PERFECT place for PERFECT hair:*:ﾟ☆</p>
             </div>
         </div>
         <div class="hero-shapes">
@@ -69,13 +69,49 @@
     </section>
 
 
+    <!-- Heart Garland Divider -->
+    <div style="text-align: center; margin: 20px 0; overflow: hidden;">
+        <marquee behavior="scroll" direction="right" scrollamount="5">
+            <img src="heartgarland.gif" alt="Heart garland">
+            <img src="star.gif" alt="Star" width="40">
+            <img src="heartgarland.gif" alt="Heart garland">
+            <img src="star.gif" alt="Star" width="40">
+            <img src="heartgarland.gif" alt="Heart garland">
+        </marquee>
+    </div>
+
+    <section id="gallery" class="gallery">
+        <div style="text-align: center; position: relative;">
+            <img src="walkingbones.gif" style="position: absolute; top: 0; left: 20px; width: 80px;" alt="Walking bones">
+            <img src="star.gif" alt="Star" width="50" style="display: inline-block; vertical-align: middle;">
+            <h2 style="display: inline-block; margin: 0 20px; vertical-align: middle;">Lucky People</h2>
+            <img src="star.gif" alt="Star" width="50" style="display: inline-block; vertical-align: middle;">
+        </div>
+        <img src="new.gif" style="position: absolute; top: 10px; right: 20px; width: 60px;" alt="New">
+        <div style="text-align: center; margin: 20px 0;">
+            <img src="butterfly.gif" alt="Butterfly" style="display: inline-block; margin: 0 10px;" width="60">
+            <img src="butterfly.gif" alt="Butterfly" style="display: inline-block; margin: 0 10px; transform: scaleX(-1);" width="60">
+        </div>
+        <div class="gallery-grid" id="gallery-grid">
+            <!-- Gallery items will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- Beach Background Divider -->
+    <div class="beach-divider">
+        <img src="moon.gif" class="beach-moon" alt="Moon">
+        <img src="seal.gif" class="beach-seal" alt="Seal">
+        <img src="sharkfin.gif" class="beach-sharkfin" alt="Shark fin">
+        <img src="segaul.gif" class="beach-seagull" alt="Seagull">
+    </div>
+
     <section id="about" class="about">
         <img src="babyangel.gif" style="position: absolute; top: 20px; right: 30px; width: 60px; z-index: 1;" alt="Angel">
         <img src="hammer.gif" style="position: absolute; bottom: 20px; left: 30px; width: 60px; z-index: 1;" alt="Hammer">
         <div class="about-content">
             <div class="about-text">
-                <p>Welcome to clovers sexy world, where they take sexy folks and make them even hotter!! yea thats me I'm Clover the cutie in the photo, im your local neighborhood spider but for hair! Yes me your passionate sexy stylist who brings experience, and my hot perspective to every cut, color, and style.</p>
-                <p>It is totally true. Whats true? That great hair is waiting to come out of its little turtle shell and it will leave you looking good and feeling confident want to know more about me? Book and appointment for the full lore.</p>
+                <p>Welcome to my sexy world, where I take sexy folks and make them even hotter!! yea thats me I'm Clover the cutie in the photo, im your local neighborhood spider but for hair! Yes me your passionate sexy stylist who brings experience, and my hot perspective to every cut, color, and style.</p>
+                <p>It is totally true. Whats true? That great hair is waiting to come out of its little turtle shell and it will leave you looking good and feeling confident want to know more about me? Book an appointment for the full lore.</p>
                 <div class="features">
                     <div class="feature">
                         <span class="feature-icon"></span>
@@ -101,33 +137,6 @@
         </div>
     </section>
 
-    <!-- Heart Garland Divider -->
-    <div style="text-align: center; margin: 20px 0; overflow: hidden;">
-        <marquee behavior="scroll" direction="right" scrollamount="5">
-            <img src="heartgarland.gif" alt="Heart garland">
-            <img src="star.gif" alt="Star" width="40">
-            <img src="heartgarland.gif" alt="Heart garland">
-            <img src="star.gif" alt="Star" width="40">
-            <img src="heartgarland.gif" alt="Heart garland">
-        </marquee>
-    </div>
-
-    <section id="gallery" class="gallery">
-        <div style="text-align: center;">
-            <img src="star.gif" alt="Star" width="50" style="display: inline-block; vertical-align: middle;">
-            <h2 style="display: inline-block; margin: 0 20px; vertical-align: middle;">Lucky People</h2>
-            <img src="star.gif" alt="Star" width="50" style="display: inline-block; vertical-align: middle;">
-        </div>
-        <img src="new.gif" style="position: absolute; top: 10px; right: 20px; width: 60px;" alt="New">
-        <div style="text-align: center; margin: 20px 0;">
-            <img src="butterfly.gif" alt="Butterfly" style="display: inline-block; margin: 0 10px;" width="60">
-            <img src="butterfly.gif" alt="Butterfly" style="display: inline-block; margin: 0 10px; transform: scaleX(-1);" width="60">
-        </div>
-        <div class="gallery-grid" id="gallery-grid">
-            <!-- Gallery items will be dynamically loaded here -->
-        </div>
-    </section>
-
     <!-- Rainbow Divider with Heart Garland and Fire Skulls -->
     <div style="text-align: center; margin: 20px 0;">
         <img src="fireskull.gif" alt="Fire skull" style="display: inline-block; width: 80px;">
@@ -141,37 +150,48 @@
         <h2>Haircuts, gossip and much more!</h2>
         <div class="services-grid">
             <div class="service-card">
+                <div class="service-stars">
+                    <span class="card-star">★</span>
+                    <span class="card-star">★</span>
+                    <span class="card-star">★</span>
+                    <span class="card-star">★</span>
+                    <span class="card-star">★</span>
+                </div>
                 <div class="service-icon"></div>
                 <h3>Haircuts & Styling</h3>
                 <p>Precision cuts and trendy styles tailored to your personality</p>
             </div>
             <div class="service-card">
+                <div class="service-stars">
+                    <span class="card-star">★</span>
+                    <span class="card-star">★</span>
+                    <span class="card-star">★</span>
+                    <span class="card-star">★</span>
+                    <span class="card-star">★</span>
+                </div>
                 <div class="service-icon"></div>
                 <h3>Hair Coloring</h3>
                 <p>Vibrant colors, highlights, balayage, and ombre techniques</p>
             </div>
             <div class="service-card">
-                <div class="service-icon"></div>
-                <h3>Hair Treatments</h3>
-                <p>Deep conditioning, keratin treatments, and hair repair</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"></div>
-                <h3>Special Events</h3>
-                <p>Wedding, prom, and special occasion styling</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"></div>
-                <h3>Hair Extensions</h3>
-                <p>Add length and volume with premium extensions</p>
-            </div>
-            <div class="service-card">
+                <div class="service-stars">
+                    <span class="card-star">★</span>
+                    <span class="card-star">★</span>
+                    <span class="card-star">★</span>
+                    <span class="card-star">★</span>
+                    <span class="card-star">★</span>
+                </div>
                 <div class="service-icon"></div>
                 <h3>Fun Dyes & Creative Colors</h3>
                 <p>Wild colors, rainbow hair, split dyes, and experimental styles</p>
             </div>
         </div>
     </section>
+
+    <!-- Eyeball GIF Divider -->
+    <div style="text-align: center; margin: 40px 0;">
+        <img src="eyeball.gif" alt="Eyeball" style="width: 100px;">
+    </div>
 
     <!-- Modal for displaying all photos from a folder -->
     <div id="gallery-modal" class="gallery-modal">
@@ -255,7 +275,23 @@
     </style>
 
     <footer>
-        <img src="lazergod.gif" style="display: block; margin: 20px auto; width: 120px;" alt="Laser">
+        <div class="footer-gifs" style="position: relative; height: 300px; overflow: hidden; margin: 20px 0;">
+            <img src="lazergod.gif" class="floating-gif" style="width: 80px;" alt="Laser">
+            <img src="butterfly.gif" class="floating-gif" style="width: 60px;" alt="Butterfly">
+            <img src="shark.gif" class="floating-gif" style="width: 70px;" alt="Shark">
+            <img src="star.gif" class="floating-gif" style="width: 50px;" alt="Star">
+            <img src="fireskull.gif" class="floating-gif" style="width: 60px;" alt="Fire skull">
+            <img src="heartgarland.gif" class="floating-gif" style="width: 80px;" alt="Heart garland">
+            <img src="Welcome.gif" class="floating-gif" style="width: 100px;" alt="Welcome">
+            <img src="hot.gif" class="floating-gif" style="width: 60px;" alt="Hot">
+            <img src="lavalamp.gif" class="floating-gif" style="width: 50px;" alt="Lava lamp">
+            <img src="babyangel.gif" class="floating-gif" style="width: 50px;" alt="Angel">
+            <img src="hammer.gif" class="floating-gif" style="width: 50px;" alt="Hammer">
+            <img src="dancingperson.gif" class="floating-gif" style="width: 60px;" alt="Dancing">
+            <img src="scissors.gif" class="floating-gif" style="width: 60px;" alt="Scissors">
+            <img src="new.gif" class="floating-gif" style="width: 50px;" alt="New">
+            <img src="flowerreflection.gif" class="floating-gif" style="width: 80px;" alt="Flower">
+        </div>
         <div class="counter">
             <p style="color: #00ff00; margin-bottom: 10px;">You are visitor number:</p>
             <div class="counter-display" id="visitor-counter">000420</div>

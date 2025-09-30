@@ -135,6 +135,22 @@ body {
     min-height: 100vh;
 }
 
+/* Hide scrollbar on iOS but keep scroll functionality */
+@supports (-webkit-touch-callout: none) {
+    /* iOS only */
+    ::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+    }
+
+    body {
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+}
+
 body.modal-open {
     overflow: hidden;
     position: fixed;
@@ -184,6 +200,10 @@ header {
     box-shadow:
         0 0 20px #ff00ff,
         inset 0 0 20px rgba(255, 255, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
 }
 
 @keyframes rainbow-bg {
@@ -277,6 +297,13 @@ marquee {
 
 .hero-content h2 {
     font-size: 4rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    min-height: 5rem;
+}
+
+.hero-content h2 .typewriter-text {
     background: linear-gradient(45deg,
         #ff0000, #ff7700, #ffff00, #00ff00,
         #0099ff, #6633ff, #ff00ff, #ff0000);
@@ -285,10 +312,13 @@ marquee {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: rainbow-bg 3s linear infinite;
-    text-shadow: none;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
+}
+
+.hero-content h2 .typewriter-cursor {
+    color: #00ff00;
+    font-weight: bold;
+    font-size: 4rem;
+    margin-left: 2px;
 }
 
 .hero-subtitle {
@@ -344,10 +374,10 @@ marquee {
 .services {
     background: repeating-linear-gradient(
         45deg,
-        #000,
-        #000 10px,
-        #ff00ff 10px,
-        #ff00ff 20px
+        #d0d0d0,
+        #d0d0d0 10px,
+        #c0c0c0 10px,
+        #c0c0c0 20px
     );
     padding: 4rem 2rem;
     border: 10px ridge #00ff00;
@@ -385,15 +415,39 @@ marquee {
     transition: all 0.3s;
 }
 
-.service-card::before {
-    content: '★ ☆ ★';
+.service-stars {
     position: absolute;
     top: 5px;
     left: 50%;
     transform: translateX(-50%);
-    color: #ffff00;
-    animation: blink 2s infinite;
+    display: flex;
+    gap: 8px;
 }
+
+.card-star {
+    color: #333;
+    font-size: 1.2rem;
+    animation: lightUp 2.5s infinite;
+}
+
+@keyframes lightUp {
+    0%, 80%, 100% {
+        color: #333;
+        text-shadow: none;
+        transform: scale(1);
+    }
+    20%, 60% {
+        color: #ffff00;
+        text-shadow: 0 0 10px #ffff00;
+        transform: scale(1.2);
+    }
+}
+
+.card-star:nth-child(1) { animation-delay: 0s; }
+.card-star:nth-child(2) { animation-delay: 0.3s; }
+.card-star:nth-child(3) { animation-delay: 0.6s; }
+.card-star:nth-child(4) { animation-delay: 0.9s; }
+.card-star:nth-child(5) { animation-delay: 1.2s; }
 
 .service-card:hover {
     transform: perspective(500px) rotateX(5deg) scale(1.1);
@@ -420,6 +474,120 @@ marquee {
     color: #fff;
     font-size: 1.1rem;
     text-shadow: 1px 1px 2px #000;
+}
+
+.star-rating {
+    margin-top: 15px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.star {
+    display: inline-block;
+    color: #333;
+    margin: 0 2px;
+    animation: fillStar 3s infinite;
+    transform-origin: center;
+}
+
+@keyframes fillStar {
+    0% {
+        color: #333;
+        transform: scale(1);
+    }
+    10% {
+        color: #ffff00;
+        text-shadow: 0 0 20px #ffff00;
+        transform: scale(1.2);
+    }
+    60% {
+        color: #ffff00;
+        text-shadow: 0 0 20px #ffff00;
+        transform: scale(1);
+    }
+    70% {
+        color: #333;
+        text-shadow: none;
+        transform: scale(1);
+    }
+    100% {
+        color: #333;
+        text-shadow: none;
+        transform: scale(1);
+    }
+}
+
+.star:nth-child(1) { animation-delay: 0s; }
+.star:nth-child(2) { animation-delay: 0.2s; }
+.star:nth-child(3) { animation-delay: 0.4s; }
+.star:nth-child(4) { animation-delay: 0.6s; }
+.star:nth-child(5) { animation-delay: 0.8s; }
+
+/* Beach Background Divider */
+.beach-divider {
+    width: 100%;
+    height: 250px;
+    background-image: url('beachbackround.png');
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    background-position: center;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Beach moon - top left */
+.beach-moon {
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    width: 70px;
+    z-index: 2;
+}
+
+/* Beach seal - stays still on the side */
+.beach-seal {
+    position: absolute;
+    right: 50px;
+    bottom: 80px;
+    width: 80px;
+    z-index: 2;
+}
+
+/* Beach shark fin - moves across bottom in water */
+.beach-sharkfin {
+    position: absolute;
+    bottom: 20px;
+    width: 60px;
+    z-index: 2;
+    animation: swimAcross 15s linear infinite;
+}
+
+/* Beach seagull - moves across higher up */
+.beach-seagull {
+    position: absolute;
+    top: 30px;
+    width: 70px;
+    z-index: 2;
+    animation: flyAcross 12s linear infinite;
+}
+
+@keyframes swimAcross {
+    0% {
+        left: calc(100% + 100px);
+    }
+    100% {
+        left: -100px;
+    }
+}
+
+@keyframes flyAcross {
+    0% {
+        left: -100px;
+    }
+    100% {
+        left: calc(100% + 100px);
+    }
 }
 
 .about {
@@ -484,7 +652,6 @@ marquee {
 
 .gallery-item {
     position: relative;
-    overflow: hidden;
     border: 5px solid #ff00ff;
     box-shadow:
         5px 5px 0px #ffff00,
@@ -492,7 +659,6 @@ marquee {
     transition: all 0.3s;
     cursor: pointer;
     background: #000;
-    height: 200px;
 }
 
 .gallery-item:hover {
@@ -506,8 +672,7 @@ marquee {
 
 .gallery-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
     transition: transform 0.3s ease;
 }
@@ -586,7 +751,6 @@ marquee {
 }
 
 .modal-image {
-    overflow: hidden;
     border: 3px solid #ff00ff;
     transition: all 0.3s;
     box-shadow:
@@ -601,8 +765,7 @@ marquee {
 
 .modal-image img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: auto;
     display: block;
     cursor: pointer;
 }
@@ -877,9 +1040,67 @@ footer {
     height: 60px;
 }
 
+/* Fake scrollbar for mobile */
+.fake-scrollbar-track {
+    position: fixed !important;
+    right: 0 !important;
+    top: 0 !important;
+    width: 17px !important;
+    height: 100vh !important;
+    background-image: url('bg-scrollbar-track@2x.png');
+    background-size: 17px 17px;
+    background-repeat: repeat;
+    background-color: #c0c0c0;
+    border-left: 2px solid #808080;
+    box-shadow: inset 1px 1px 0 #808080;
+    z-index: 10000 !important;
+    pointer-events: none !important;
+}
+
+.fake-scrollbar-thumb {
+    position: absolute;
+    width: 15px;
+    height: 60px;
+    left: 1px;
+    background: linear-gradient(to bottom, #ffffff 0%, #c0c0c0 50%, #808080 100%);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    box-shadow:
+        inset 1px 1px 0 #dfdfdf,
+        inset -1px -1px 0 #808080;
+}
+
+.floating-gif {
+    position: absolute;
+    pointer-events: none;
+}
+
 @media (max-width: 768px) {
+    .footer-gifs {
+        gap: 10px !important;
+    }
+
+    .footer-gifs img {
+        width: 40px !important;
+    }
+
+    .footer-gifs img[alt="Welcome"] {
+        width: 60px !important;
+    }
+
+    .footer-gifs img[alt="Laser"] {
+        width: 50px !important;
+    }
+    .fake-scrollbar-track {
+        display: block;
+    }
     .hamburger-menu {
         display: block;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .welcome-gif {
@@ -891,10 +1112,19 @@ footer {
 
     header {
         padding: 0.5rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .header-gif-hot, .header-gif-lava {
+        margin-left: 10px !important;
     }
 
     nav {
-        position: relative;
+        position: static;
     }
 
     .nav-links {

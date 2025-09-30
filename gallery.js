@@ -334,7 +334,69 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    let savedScrollPosition = 0;
+
     function openModal(index) {
+        // Save current scroll position
+        savedScrollPosition = window.scrollY || window.pageYOffset;
+
+        // Create fake scrollbar for modal on mobile
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+            const modalScrollbar = document.createElement('div');
+            modalScrollbar.id = 'modal-fake-scrollbar';
+            modalScrollbar.innerHTML = `
+                <div style="
+                    position: fixed;
+                    right: 0;
+                    top: 0;
+                    width: 17px;
+                    height: 100%;
+                    background: #c0c0c0;
+                    border-left: 1px solid #808080;
+                    z-index: 1000001;
+                ">
+                    <div id="modal-fake-thumb" style="
+                        position: absolute;
+                        width: 15px;
+                        height: 60px;
+                        left: 1px;
+                        background: linear-gradient(to bottom, #ffffff, #c0c0c0, #808080);
+                        border: 1px solid #808080;
+                        box-shadow: inset 1px 1px 0 #dfdfdf;
+                        top: 0;
+                    "></div>
+                </div>
+            `;
+            document.body.appendChild(modalScrollbar);
+
+            // Update modal scrollbar on scroll
+            const updateModalScrollbar = function() {
+                // The modal itself is what scrolls, not modal-content
+                const modalEl = document.getElementById('gallery-modal');
+                if (modalEl) {
+                    const scrollHeight = modalEl.scrollHeight - modalEl.clientHeight;
+                    const scrollPercent = scrollHeight > 0 ? modalEl.scrollTop / scrollHeight : 0;
+                    const trackHeight = window.innerHeight;
+                    const thumbHeight = 60;
+                    const maxTop = trackHeight - thumbHeight;
+                    const thumb = document.getElementById('modal-fake-thumb');
+                    if (thumb) {
+                        thumb.style.top = Math.max(0, Math.min(maxTop, scrollPercent * maxTop)) + 'px';
+                    }
+                }
+            };
+
+            // Listen to modal scroll
+            setTimeout(function() {
+                const modalEl = document.getElementById('gallery-modal');
+                if (modalEl) {
+                    modalEl.addEventListener('scroll', updateModalScrollbar);
+                    updateModalScrollbar();
+                }
+            }, 100);
+        }
+
         const client = galleryData[index];
         modalTitle.textContent = `BEAUTIFUL PEOPLE WITH BEAUTIFUL HAIR`;
         modalGallery.innerHTML = '';
@@ -366,6 +428,15 @@ document.addEventListener('DOMContentLoaded', function() {
     function closeModal() {
         modal.style.display = 'none';
         document.body.classList.remove('modal-open');
+
+        // Remove modal scrollbar on mobile
+        const modalScrollbar = document.getElementById('modal-fake-scrollbar');
+        if (modalScrollbar) {
+            modalScrollbar.remove();
+        }
+
+        // Restore scroll position
+        window.scrollTo(0, savedScrollPosition);
     }
 
     modalClose.addEventListener('click', closeModal);
