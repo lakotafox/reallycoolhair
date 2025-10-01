@@ -578,8 +578,9 @@ marquee {
     bottom: 50px;
     width: 90px;
     z-index: 2;
-    animation: swimAcross 18s linear infinite;
+    animation: swimAcrossReverse 18s linear infinite;
     animation-delay: 5s;
+    transform: scaleX(-1);
 }
 
 @keyframes swimAcross {
@@ -592,6 +593,15 @@ marquee {
 }
 
 @keyframes flyAcross {
+    0% {
+        left: -100px;
+    }
+    100% {
+        left: calc(100% + 100px);
+    }
+}
+
+@keyframes swimAcrossReverse {
     0% {
         left: -100px;
     }
