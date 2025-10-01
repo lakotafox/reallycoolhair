@@ -572,6 +572,16 @@ marquee {
     animation: flyAcross 12s linear infinite;
 }
 
+/* Beach whale - dives across in the water */
+.beach-whale {
+    position: absolute;
+    bottom: 50px;
+    width: 90px;
+    z-index: 2;
+    animation: swimAcross 18s linear infinite;
+    animation-delay: 5s;
+}
+
 @keyframes swimAcross {
     0% {
         left: calc(100% + 100px);
