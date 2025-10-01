@@ -580,7 +580,6 @@ marquee {
     z-index: 2;
     animation: swimAcrossReverse 18s linear infinite;
     animation-delay: 5s;
-    transform: scaleX(-1);
 }
 
 @keyframes swimAcross {
