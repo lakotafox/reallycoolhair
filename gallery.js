@@ -316,10 +316,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const lightbox = document.getElementById('image-lightbox');
     const lightboxImage = document.getElementById('lightbox-image');
     const lightboxClose = document.querySelector('.lightbox-close');
+    const seeMoreBtn = document.getElementById('gallery-see-more-btn');
+    let allGalleryItemsShown = false;
+
+    // Check if mobile
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
 
     galleryData.forEach((client, index) => {
         const galleryItem = document.createElement('div');
         galleryItem.className = 'gallery-item';
+
+        // Hide items after the first 3 on mobile
+        if (isMobile() && index >= 3) {
+            galleryItem.classList.add('hidden-mobile');
+        }
+
         galleryItem.dataset.index = index;
 
         const img = document.createElement('img');
@@ -333,6 +346,36 @@ document.addEventListener('DOMContentLoaded', function() {
             openModal(index);
         });
     });
+
+    // See More button functionality
+    if (seeMoreBtn) {
+        seeMoreBtn.addEventListener('click', function() {
+            // On mobile, navigate to full gallery page
+            if (isMobile()) {
+                window.location.href = 'gallery-full.html';
+            } else {
+                // On desktop, toggle showing all items
+                if (!allGalleryItemsShown) {
+                    const hiddenItems = document.querySelectorAll('.gallery-item.hidden-mobile');
+                    hiddenItems.forEach(item => {
+                        item.classList.remove('hidden-mobile');
+                    });
+                    seeMoreBtn.textContent = 'See Less';
+                    allGalleryItemsShown = true;
+                } else {
+                    const allItems = document.querySelectorAll('.gallery-item');
+                    allItems.forEach((item, index) => {
+                        if (index >= 3) {
+                            item.classList.add('hidden-mobile');
+                        }
+                    });
+                    seeMoreBtn.textContent = 'See More';
+                    allGalleryItemsShown = false;
+                    document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    }
 
     let savedScrollPosition = 0;
 

@@ -164,7 +164,7 @@
         <div class="hero-content">
             <h2>LUCKY YOU</h2>
             <p class="hero-text">You're already beautiful, why not get the hair to match?</p>
-            <a href="#contact" class="cta-button">Book Your Appointment</a>
+            <a href="https://www.vagaro.com/chelseasalon/book-now" target="_blank" rel="noopener noreferrer" class="cta-button">Book Your Appointment</a>
             <div style="margin-top: 30px;">
                 <span class="blink-text" style="font-size: 2rem;">~*HAIR PARADISE*~</span>
                 <div style="margin-top: 15px;">
@@ -207,6 +207,9 @@
         <div class="gallery-grid" id="gallery-grid">
             <!-- Gallery items will be dynamically loaded here -->
         </div>
+        <div class="gallery-see-more-container">
+            <button class="gallery-see-more-btn" id="gallery-see-more-btn">See More</button>
+        </div>
     </section>
 
     <!-- Beach Background Divider -->
@@ -219,8 +222,8 @@
     </div>
 
     <section id="about" class="about">
-        <img src="babyangel.gif" style="position: absolute; top: 20px; right: 30px; width: 60px; z-index: 1;" alt="Angel">
-        <img src="hammer.gif" style="position: absolute; bottom: 20px; left: 30px; width: 60px; z-index: 1;" alt="Hammer">
+        <img src="babyangel.gif" style="position: absolute; top: -40px; right: 30px; width: 60px; z-index: 1;" alt="Angel">
+        <img src="hammer.gif" style="position: absolute; bottom: -40px; left: 30px; width: 60px; z-index: 1;" alt="Hammer">
         <div class="about-content">
             <div class="about-text">
                 <p>Welcome to my sexy world, where I take sexy folks and make them even hotter!! yea thats me I'm Clover the cutie in the photo, im your local neighborhood spider but for hair! Yes me your passionate sexy stylist who brings experience, and my hot perspective to every cut, color, and style.</p>
@@ -328,52 +331,25 @@
 
     <section id="contact" class="contact">
         <h2>Get In Touch</h2>
-        <div class="contact-content">
+        <div class="contact-content" style="text-align: center; max-width: 600px; margin: 0 auto;">
             <div class="contact-info">
                 <h3>Visit Us</h3>
                 <div class="info-item">
                     <span class="info-icon"></span>
                     <div>
-                        <p>69 ur moms house Street</p>
-                        <p>23 Fashion town N. luckys world E.</p>
+                        <p>2121 SE Belmont St</p>
+                        <p>Unit A</p>
+                        <p>Portland, OR 97214</p>
                     </div>
                 </div>
                 <div class="info-item">
                     <span class="info-icon"></span>
-                    <p><a href="tel:+18017094719">(801) 709-4719</a></p>
+                    <p><a href="mailto:reallycoolhair@gmail.com">reallycoolhair@gmail.com</a></p>
                 </div>
-                <div class="info-item">
-                    <span class="info-icon"></span>
-                    <p><a href="mailto:reallycool.hair@you.com">reallycool.hair@you.com</a></p>
+                <div style="margin-top: 30px;">
+                    <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 15px; color: #8b0000;">Appointments Only</p>
+                    <a href="https://www.vagaro.com/chelseasalon/book-now" target="_blank" rel="noopener noreferrer" class="cta-button">Book Now</a>
                 </div>
-                <div class="info-item">
-                    <span class="info-icon"></span>
-                    <div>
-                        <p>Mon-Fri: 7:00 AM - 8:00 PM</p>
-                        <p>Sat: 4:00 AM - 6:00 PM</p>
-                        <p>Sun: 11:00 AM - 11:30 AM</p>
-                    </div>
-                </div>
-            </div>
-            <div class="contact-form">
-                <h3>Book Your Appointment</h3>
-                <form>
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="tel" placeholder="Phone Number" required>
-                    <select required>
-                        <option value="">Select Service</option>
-                        <option>Haircut & Styling</option>
-                        <option>Hair Coloring</option>
-                        <option>Hair Treatment</option>
-                        <option>Special Event Styling</option>
-                        <option>Hair Extensions</option>
-                        <option>Perms & Texture</option>
-                    </select>
-                    <input type="date" required>
-                    <textarea placeholder="Additional Notes (optional)" rows="3"></textarea>
-                    <button type="submit" class="submit-btn">Book Now</button>
-                </form>
             </div>
         </div>
     </section>
@@ -382,8 +358,8 @@
     <img src="shark.gif" style="position: fixed; bottom: 100px; animation: swim 20s infinite linear; z-index: 9995; pointer-events: none;" alt="Swimming shark" width="100" id="swimming-shark">
     <style>
         @keyframes swim {
-            0% { left: -100px; }
-            100% { left: calc(100% + 100px); }
+            0% { right: -100px; }
+            100% { right: calc(100% + 100px); }
         }
     </style>
 

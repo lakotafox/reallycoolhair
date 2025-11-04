@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Lucky You Hair Salon</title>
+    <link rel="stylesheet" href="y2k-styles.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .gallery-header h1 {
+            font-size: 2.5rem;
+            animation: rainbow 2s infinite;
+            text-shadow: 2px 2px 0px #ff00ff;
+            margin-bottom: 20px;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 30px;
+            background: #ff1493;
+            color: #ffff00;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: 3px solid #000;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 0px #000;
+            margin-bottom: 20px;
+        }
+
+        .back-button:active {
+            border-style: inset;
+            transform: scale(0.95);
+        }
+
+        .full-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 100%;
+        }
+
+        .full-gallery-item {
+            border: 3px solid #ff00ff;
+            box-shadow: 3px 3px 0px #ffff00;
+            cursor: pointer;
+            background: #000;
+        }
+
+        .full-gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Lightbox styles */
+        .image-lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.98);
+            z-index: 999999;
+            padding: 80px 20px 20px;
+            box-sizing: border-box;
+            overflow: auto;
+            text-align: center;
+        }
+
+        .lightbox-close {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(180deg, #ff0000, #990000);
+            color: #ffff00;
+            font-size: 1.2rem;
+            font-weight: bold;
+            font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+            padding: 10px 20px;
+            border: 3px outset #ffff00;
+            cursor: pointer;
+            z-index: 1000001;
+            text-shadow: 2px 2px #000;
+            letter-spacing: 2px;
+        }
+
+        .lightbox-close:active {
+            border-style: inset;
+            transform: scale(0.95);
+        }
+
+        #lightbox-image {
+            max-width: 90%;
+            max-height: 90vh;
+            margin: auto;
+            display: block;
+            border: 5px solid #ff00ff;
+            box-shadow:
+                0 0 20px #ff00ff,
+                0 0 40px #ffff00;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-header">
+        <a href="index.html" class="back-button">← Back</a>
+        <h1>LUCKY PEOPLE WITH LUCKY HAIR</h1>
+    </div>
+
+    <div class="full-gallery-grid" id="full-gallery-grid">
+        <!-- Gallery items will be loaded here -->
+    </div>
+
+    <!-- Lightbox for expanded single image -->
+    <div id="image-lightbox" class="image-lightbox">
+        <button class="lightbox-close" id="lightbox-close">[X] CLOSE</button>
+        <img id="lightbox-image" src="" alt="">
+    </div>
+
+    <script src="gallery.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fullGalleryGrid = document.getElementById('full-gallery-grid');
+            const lightbox = document.getElementById('image-lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxClose = document.getElementById('lightbox-close');
+
+            // Load all gallery items
+            galleryData.forEach((client, index) => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'full-gallery-item';
+
+                const img = document.createElement('img');
+                img.src = `rlycoolhair_pics/${client.folder}/${client.preview}`;
+                img.alt = `Client ${index + 1} Hair Style`;
+                img.loading = 'lazy';
+
+                galleryItem.appendChild(img);
+                fullGalleryGrid.appendChild(galleryItem);
+
+                // Click to open lightbox
+                galleryItem.addEventListener('click', function() {
+                    openLightbox(img.src);
+                });
+            });
+
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+                lightboxImage.src = '';
+                document.body.style.overflow = '';
+            }
+
+            lightboxClose.addEventListener('click', closeLightbox);
+
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            // Close on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && lightbox.style.display === 'block') {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

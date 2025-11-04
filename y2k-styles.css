@@ -335,32 +335,21 @@ marquee {
 .cta-button {
     display: inline-block;
     padding: 15px 40px;
-    background: linear-gradient(45deg, #ff00ff, #ffff00, #00ffff, #ff00ff);
-    background-size: 400% 400%;
-    animation: rainbow-bg 3s ease infinite;
-    color: #000;
+    background: #ff1493;
+    color: #ffff00;
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
-    border: 5px solid #fff;
-    box-shadow:
-        5px 5px 0px #ff00ff,
-        10px 10px 0px #ffff00,
-        15px 15px 0px #00ffff,
-        20px 20px 20px rgba(0, 0, 0, 0.5);
-    transition: all 0.2s;
+    border: 3px solid #000;
+    transition: all 0.1s;
     letter-spacing: 2px;
+    text-shadow: 2px 2px 0px #000;
 }
 
 .cta-button:hover {
-    transform: translate(-5px, -5px);
-    box-shadow:
-        10px 10px 0px #ff00ff,
-        20px 20px 0px #ffff00,
-        30px 30px 0px #00ffff,
-        40px 40px 30px rgba(0, 0, 0, 0.5);
-    animation: blink 0.2s infinite;
+    border-style: inset;
+    transform: scale(1.05);
 }
 
 .butterfly-gif {
@@ -1095,7 +1084,44 @@ footer {
     pointer-events: none;
 }
 
+/* Gallery See More Button */
+.gallery-see-more-container {
+    text-align: center;
+    margin: 30px 0;
+    display: none;
+}
+
+.gallery-see-more-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #ff1493;
+    color: #ffff00;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 3px solid #000;
+    transition: all 0.1s;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px #000;
+    cursor: pointer;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+}
+
+.gallery-see-more-btn:hover {
+    border-style: inset;
+    transform: scale(1.05);
+}
+
 @media (max-width: 768px) {
+    .gallery-item.hidden-mobile {
+        display: none;
+    }
+
+    .gallery-see-more-container {
+        display: block;
+    }
+
     .footer-gifs {
         gap: 10px !important;
     }
@@ -1212,6 +1238,23 @@ footer {
     .about-content,
     .contact-content {
         grid-template-columns: 1fr;
+    }
+
+    /* Mobile About Section - Use more horizontal space */
+    .about {
+        padding: 2rem 0.5rem;
+        margin: 10px;
+    }
+
+    .about-text {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .about p {
+        font-size: 0.95rem;
+        line-height: 1.3;
+        margin-bottom: 0.75rem;
+        text-align: justify;
     }
 
     marquee {
