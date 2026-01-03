@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Photos - Really Cool Hair</title>
+    <link rel="stylesheet" href="y2k-styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a0a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+        }
+
+        .upload-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(145deg, #2d1b4e, #1a0a2e);
+            border: 3px solid #ff00ff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.3),
+                        inset 0 0 20px rgba(255, 0, 255, 0.1);
+        }
+
+        .upload-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: #ffff00;
+            text-shadow: 2px 2px #ff00ff, 0 0 20px #ffff00;
+            margin-bottom: 30px;
+            animation: rainbow-text 3s infinite;
+        }
+
+        @keyframes rainbow-text {
+            0% { color: #ffff00; }
+            33% { color: #ff00ff; }
+            66% { color: #00ffff; }
+            100% { color: #ffff00; }
+        }
+
+        .upload-zone {
+            border: 3px dashed #00ffff;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(0, 255, 255, 0.05);
+            margin-bottom: 20px;
+        }
+
+        .upload-zone:hover {
+            border-color: #ff00ff;
+            background: rgba(255, 0, 255, 0.1);
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+        }
+
+        .upload-zone.dragover {
+            border-color: #ffff00;
+            background: rgba(255, 255, 0, 0.1);
+        }
+
+        .upload-icon {
+            font-size: 4em;
+            margin-bottom: 15px;
+        }
+
+        .upload-text {
+            color: #00ffff;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .upload-subtext {
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        #file-input {
+            display: none;
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .preview-item {
+            position: relative;
+            border: 2px solid #ff00ff;
+            border-radius: 10px;
+            overflow: hidden;
+            aspect-ratio: 1;
+        }
+
+        .preview-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .preview-item .remove-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            line-height: 1;
+        }
+
+        .preview-item .remove-btn:hover {
+            background: #cc0000;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            font-size: 1.2em;
+            font-family: 'Comic Sans MS', cursive;
+            border: 3px solid;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .btn-publish {
+            background: linear-gradient(145deg, #00ff00, #008800);
+            border-color: #00ff00;
+            color: #000;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+        }
+
+        .btn-publish:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 255, 0, 0.8);
+        }
+
+        .btn-publish:disabled {
+            background: #444;
+            border-color: #666;
+            color: #888;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .btn-clear {
+            background: linear-gradient(145deg, #ff4444, #aa0000);
+            border-color: #ff0000;
+            color: #fff;
+        }
+
+        .btn-clear:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+        }
+
+        .status-message {
+            text-align: center;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 10px;
+            font-size: 1.1em;
+            display: none;
+        }
+
+        .status-message.success {
+            display: block;
+            background: rgba(0, 255, 0, 0.2);
+            border: 2px solid #00ff00;
+            color: #00ff00;
+        }
+
+        .status-message.error {
+            display: block;
+            background: rgba(255, 0, 0, 0.2);
+            border: 2px solid #ff0000;
+            color: #ff0000;
+        }
+
+        .status-message.uploading {
+            display: block;
+            background: rgba(255, 255, 0, 0.2);
+            border: 2px solid #ffff00;
+            color: #ffff00;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: #00ffff;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        .back-link:hover {
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff;
+        }
+
+        .photo-count {
+            text-align: center;
+            color: #ffff00;
+            font-size: 1.2em;
+            margin: 15px 0;
+        }
+
+        .decorative-gif {
+            position: fixed;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .gif-top-left {
+            top: 20px;
+            left: 20px;
+            width: 80px;
+        }
+
+        .gif-top-right {
+            top: 20px;
+            right: 20px;
+            width: 80px;
+        }
+
+        .gif-bottom-left {
+            bottom: 20px;
+            left: 20px;
+            width: 60px;
+        }
+
+        .gif-bottom-right {
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <img src="star.gif" class="decorative-gif gif-top-left" alt="">
+    <img src="butterfly.gif" class="decorative-gif gif-top-right" alt="">
+    <img src="scissors.gif" class="decorative-gif gif-bottom-left" alt="">
+    <img src="star.gif" class="decorative-gif gif-bottom-right" alt="">
+
+    <div class="upload-container">
+        <h1 class="upload-title">Add New Photos</h1>
+
+        <div class="upload-zone" id="upload-zone">
+            <div class="upload-icon">📸</div>
+            <div class="upload-text">Click or drag photos here</div>
+            <div class="upload-subtext">You can add multiple photos for this customer</div>
+        </div>
+
+        <input type="file" id="file-input" accept="image/*" multiple>
+
+        <div class="photo-count" id="photo-count"></div>
+
+        <div class="preview-grid" id="preview-grid"></div>
+
+        <div class="status-message" id="status-message"></div>
+
+        <div class="btn-container">
+            <button class="btn btn-clear" id="clear-btn" style="display: none;">Clear All</button>
+            <button class="btn btn-publish" id="publish-btn" disabled>Publish</button>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to Gallery</a>
+    </div>
+
+    <script src="upload.js"></script>
+</body>
+</html>
