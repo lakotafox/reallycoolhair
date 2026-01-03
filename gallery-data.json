@@ -1,6 +1,14 @@
 {
   "clients": [
     {
+      "id": 1767418403516,
+      "preview": "https://res.cloudinary.com/dltlrgaay/image/upload/v1767418403/zohohjnihjwqqkm9c1wd.jpg",
+      "images": [
+        "https://res.cloudinary.com/dltlrgaay/image/upload/v1767418403/zohohjnihjwqqkm9c1wd.jpg"
+      ],
+      "createdAt": "2026-01-03T05:33:23.516Z"
+    },
+    {
       "id": 1767417706170,
       "preview": "https://res.cloudinary.com/dltlrgaay/image/upload/v1767417704/cehoycskfjzdq758t2yc.jpg",
       "images": [
@@ -315,5 +323,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-01-03T05:21:47.168Z"
+  "lastUpdated": "2026-01-03T05:33:24.460Z"
 }
