@@ -1113,6 +1113,78 @@ footer {
     transform: scale(1.05);
 }
 
+/* Love Forever Animation Section */
+.love-section {
+    position: relative;
+    background: #000;
+    height: 500px;
+    margin: 0;
+    overflow: hidden;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+#love-ui .love {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -225px 0 0 -225px;
+    --i: 1;
+}
+
+#love-ui .love:last-child .love_word {
+    color: #ea80b0;
+    font-size: 1.4rem;
+    text-shadow: 0 0 10px #fff;
+}
+
+#love-ui .love_word {
+    color: #ea80b0;
+    font-size: 1.4rem;
+    transform: translateY(-100%) rotateZ(-30deg);
+    text-shadow: 0 0 10px #fff;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+#love-ui .love_horizontal {
+    animation: love-horizontal 10000ms infinite alternate ease-in-out;
+    animation-delay: calc(var(--i) * -300ms);
+}
+
+#love-ui .love_vertical {
+    animation: love-vertical 20000ms infinite linear;
+    animation-delay: calc(var(--i) * -300ms);
+}
+
+@keyframes love-horizontal {
+    from { transform: translateX(0px); }
+    to   { transform: translateX(450px); }
+}
+
+@keyframes love-vertical {
+    0%   { transform: translateY(180px); }
+    10%  { transform: translateY(45px); }
+    15%  { transform: translateY(4.5px); }
+    18%  { transform: translateY(0px); }
+    20%  { transform: translateY(4.5px); }
+    22%  { transform: translateY(34.61538px); }
+    24%  { transform: translateY(64.28571px); }
+    25%  { transform: translateY(112.5px); }
+    26%  { transform: translateY(64.28571px); }
+    28%  { transform: translateY(34.61538px); }
+    30%  { transform: translateY(4.5px); }
+    32%  { transform: translateY(0px); }
+    35%  { transform: translateY(4.5px); }
+    40%  { transform: translateY(45px); }
+    50%  { transform: translateY(180px); }
+    71%  { transform: translateY(428.57143px); }
+    72.5%{ transform: translateY(441.17647px); }
+    75%  { transform: translateY(450px); }
+    77.5%{ transform: translateY(441.17647px); }
+    79%  { transform: translateY(428.57143px); }
+    100% { transform: translateY(180px); }
+}
+
 @media (max-width: 768px) {
     .gallery-item.hidden-mobile {
         display: none;
